@@ -18,12 +18,13 @@ var saveBtn = $(".btn")
 renderLastRegistered();
 
 function renderLastRegistered() {
-  var textArea = localStorage.getItem("9am");
+  var savedText = localStorage.getItem("9am");
+  var textArea= document.querySelector("#hour-9text")
   if (!textArea) {
     return;
   }
 
-  textArea.textContent = textArea;
+  textArea.value = savedText
 }
 
 saveBtn.on("click", function(event) {
@@ -42,6 +43,12 @@ saveBtn.on("click", function(event) {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
+
+  var currentTime = dayjs().format("hh:mm:ss")
+  console.log(currentTime)
+
+  if 
+
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
