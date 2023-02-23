@@ -44,10 +44,26 @@ saveBtn.on("click", function(event) {
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  var currentTime = dayjs().format("hh:mm:ss")
+  var currentTime = dayjs().format("hh")
+  var string = document.querySelector("#hour-09")
+  var newString = string.id.slice(-2)
+
+  if (newString = currentTime) {
+    string.classList.add("present")
+  }
+
+  else if (newString < currentTime) {
+    string.classList.add("past")
+  }
+
+  else {
+    string.classList.add("future")
+  }
+
+  console.log(newString)
   console.log(currentTime)
 
-  if 
+
 
   //
   // TODO: Add code to get any user input that was saved in localStorage and set
