@@ -28,32 +28,15 @@ saveBtn.on("click", function(event) {
 
 // Get item from local storage
 
-var nineTextArea = document.getElementById("hour-9text")
-var tenTextArea = document.getElementById("hour-10text")
-var elevenTextArea = document.getElementById("hour-11text")
-// var twelveTextArea = document.getElementById("hour-12text")
-// var thirteenTextArea = document.getElementById("hour-13text")
-// var fourteenTextArea = document.getElementById("hour-14text")
-// var fifteenTextArea = document.getElementById("hour-15text")
-// var sixteenTextArea = document.getElementById("hour-16text")
-// var seventeenTextArea = document.getElementById("hour-17text")
-
-var textArray = [
-  nineTextArea, 
-  tenTextArea,
-  elevenTextArea,
-]
-
-textArray.forEach (pageLoad)
-
-function pageLoad (event) {
-
-console.log(event.id)
-
-var savedText = localStorage.getItem(event.id)
-textArray.value = savedText
-
-}
+$('#hour-9text').val(localStorage.getItem('hour-9text'));
+$('#hour-10text').val(localStorage.getItem('hour-10text'));
+$('#hour-11text').val(localStorage.getItem('hour-11text'));
+$('#hour-12text').val(localStorage.getItem('hour-12text'));
+$('#hour-13text').val(localStorage.getItem('hour-13text'));
+$('#hour-14text').val(localStorage.getItem('hour-14text'));
+$('#hour-15text').val(localStorage.getItem('hour-15text'));
+$('#hour-16text').val(localStorage.getItem('hour-16text'));
+$('#hour-17text').val(localStorage.getItem('hour-17text'));
 
 
   // TODO: Add code to apply the past, present, or future class to each time
