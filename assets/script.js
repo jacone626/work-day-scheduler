@@ -19,11 +19,9 @@ var saveBtn = $(".btn")
 saveBtn.on("click", function(event) {
   event.preventDefault();
 
-  console.log(this.classList[4]);
   var textID = this.classList[4]
   
   var localTextArea= document.getElementById(textID).value;
-  console.log(localTextArea)
   localStorage.setItem(textID, localTextArea);
   }
 );
@@ -31,30 +29,29 @@ saveBtn.on("click", function(event) {
 // Get item from local storage
 
 var nineTextArea = document.getElementById("hour-9text")
-// var tenTextArea = document.getElementById("hour-10text")
-// var elevenTextArea = document.getElementById("hour-11text")
-
-// console.log(nineTextArea)
+var tenTextArea = document.getElementById("hour-10text")
+var elevenTextArea = document.getElementById("hour-11text")
+// var twelveTextArea = document.getElementById("hour-12text")
+// var thirteenTextArea = document.getElementById("hour-13text")
+// var fourteenTextArea = document.getElementById("hour-14text")
+// var fifteenTextArea = document.getElementById("hour-15text")
+// var sixteenTextArea = document.getElementById("hour-16text")
+// var seventeenTextArea = document.getElementById("hour-17text")
 
 var textArray = [
   nineTextArea, 
-  // tenTextArea,
-  // elevenTextArea,
+  tenTextArea,
+  elevenTextArea,
 ]
 
 textArray.forEach (pageLoad)
 
 function pageLoad (event) {
 
-  console.log(event.id)
-
-// var savedText = localStorage.getItem("9am");
-// var textArea= document.querySelector("#hour-9text")
- 
-// textArea.value = savedText
+console.log(event.id)
 
 var savedText = localStorage.getItem(event.id)
-textArray[0].value = savedText
+textArray.value = savedText
 
 }
 
