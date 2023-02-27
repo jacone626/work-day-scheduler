@@ -15,24 +15,48 @@ $(function () {
 
   //Set item to local storage
 var saveBtn = $(".btn")
+
 saveBtn.on("click", function(event) {
   event.preventDefault();
 
-  console.log(this);
+  console.log(this.classList[4]);
+  var textID = this.classList[4]
   
-  var textArea= document.querySelector("#hour-9text").value;
-  localStorage.setItem("9am", textArea);
+  var localTextArea= document.getElementById(textID).value;
+  console.log(localTextArea)
+  localStorage.setItem(textID, localTextArea);
   }
 );
 
 // Get item from local storage
-var savedText = localStorage.getItem("9am");
-var textArea= document.querySelector("#hour-9text")
+
+var nineTextArea = document.getElementById("hour-9text")
+// var tenTextArea = document.getElementById("hour-10text")
+// var elevenTextArea = document.getElementById("hour-11text")
+
+// console.log(nineTextArea)
+
+var textArray = [
+  nineTextArea, 
+  // tenTextArea,
+  // elevenTextArea,
+]
+
+textArray.forEach (pageLoad)
+
+function pageLoad (event) {
+
+  console.log(event.id)
+
+// var savedText = localStorage.getItem("9am");
+// var textArea= document.querySelector("#hour-9text")
  
-  if (!textArea) 
-    return;
-  
-  textArea.value = savedText
+// textArea.value = savedText
+
+var savedText = localStorage.getItem(event.id)
+textArray[0].value = savedText
+
+}
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -41,7 +65,7 @@ var textArea= document.querySelector("#hour-9text")
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
-  var currentTime = dayjs().format("hh")
+  var currentTime = dayjs().format("HH")
   var string = document.querySelector("#hour-09")
   var newString = string.id.slice(-2)
 
@@ -56,14 +80,6 @@ var textArea= document.querySelector("#hour-9text")
   else {
     string.classList.add("future")
   }
-
-
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-
 
   // TODO: Add code to display the current date in the header of the page.
 
