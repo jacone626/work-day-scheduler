@@ -2,7 +2,6 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
-var time = dayjs().format('hh:mm:ss');
 
 $(function () {
 
@@ -13,29 +12,27 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
+
+  //Set item to local storage
 var saveBtn = $(".btn")
-
-renderLastRegistered();
-
-function renderLastRegistered() {
-  var savedText = localStorage.getItem("9am");
-  var textArea= document.querySelector("#hour-9text")
-  if (!textArea) {
-    return;
-  }
-
-  textArea.value = savedText
-}
-
 saveBtn.on("click", function(event) {
   event.preventDefault();
 
+  console.log(this);
+  
   var textArea= document.querySelector("#hour-9text").value;
-
-    localStorage.setItem("9am", textArea);
-    renderLastRegistered();
+  localStorage.setItem("9am", textArea);
   }
 );
+
+// Get item from local storage
+var savedText = localStorage.getItem("9am");
+var textArea= document.querySelector("#hour-9text")
+ 
+  if (!textArea) 
+    return;
+  
+  textArea.value = savedText
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -48,7 +45,7 @@ saveBtn.on("click", function(event) {
   var string = document.querySelector("#hour-09")
   var newString = string.id.slice(-2)
 
-  if (newString = currentTime) {
+  if (newString === currentTime) {
     string.classList.add("present")
   }
 
@@ -59,10 +56,6 @@ saveBtn.on("click", function(event) {
   else {
     string.classList.add("future")
   }
-
-  console.log(newString)
-  console.log(currentTime)
-
 
 
   //
