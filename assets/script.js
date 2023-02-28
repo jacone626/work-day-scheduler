@@ -5,15 +5,7 @@
 
 $(function () {
 
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-  
-
-  //Set item to local storage
+//Set item to local storage
 var saveBtn = $(".btn")
 
 saveBtn.on("click", function(event) {
@@ -46,20 +38,33 @@ $('#hour-17text').val(localStorage.getItem('hour-17text'));
   // current hour in 24-hour time?
 
   var currentTime = dayjs().format("HH")
-  var string = document.querySelector("#hour-09")
-  var newString = string.id.slice(-2)
+  
+  
+  var string = $(".time-block")
 
-  if (newString === currentTime) {
-    string.classList.add("present")
-  }
+  console.log(string)
 
-  else if (newString < currentTime) {
-    string.classList.add("past")
-  }
+  string.each((string) => {
+    var newString = string.id.slice(-2)
 
-  else {
-    string.classList.add("future")
-  }
+    console.log(newString)
+
+    console.log(currentTime)
+
+  });
+
+
+  // if (newString === currentTime) {
+  //   string.classList.add("present")
+  // }
+
+  // else if (newString < currentTime) {
+  //   string.classList.add("past")
+  // }
+
+  // else {
+  //   string.classList.add("future")
+  // }
 
   // TODO: Add code to display the current date in the header of the page.
 
