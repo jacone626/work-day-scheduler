@@ -30,14 +30,8 @@ $('#hour-17text').val(localStorage.getItem('hour-17text'));
 var currentTime = dayjs().format("HH")
 var string = $(".time-block")
 
-console.log(string)
-
 string.each(function () {
     var newString= $(this).attr("id").split("-")[1];
-
-    console.log(newString)
-
-    console.log(currentTime)
 
     if (newString == currentTime) {
       $(this).addClass("present")
