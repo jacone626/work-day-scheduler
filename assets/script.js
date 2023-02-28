@@ -1,8 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
-
-
 $(function () {
 
 //Set item to local storage
@@ -37,34 +32,32 @@ $('#hour-17text').val(localStorage.getItem('hour-17text'));
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
 
+
   var currentTime = dayjs().format("HH")
-  
-  
   var string = $(".time-block")
 
   console.log(string)
 
-  string.each((string) => {
-    var newString = string.id.slice(-2)
+  string.each(function () {
+    var newString= $(this).attr("id").split("-")[1];
 
     console.log(newString)
 
-    console.log(currentTime)
+    // console.log(currentTime)
+
+    // if (newString == currentTime) {
+    //   $(this).addClass("present")
+    // }
+  
+    // else if (newString < currentTime) {
+    //   $(this).addClass("past")
+    // }
+  
+    // else {
+    //   $(this).addClass("future")
+    // }
 
   });
-
-
-  // if (newString === currentTime) {
-  //   string.classList.add("present")
-  // }
-
-  // else if (newString < currentTime) {
-  //   string.classList.add("past")
-  // }
-
-  // else {
-  //   string.classList.add("future")
-  // }
 
   // TODO: Add code to display the current date in the header of the page.
 
