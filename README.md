@@ -2,37 +2,28 @@
 A calendar that tracks your schedule during the work day
 
 ## Description
-This work schedule website was made to track your schedule during the work day
+This work schedule website was made to track your schedule during the work day. It contains time blocks from 9am-5pm and allows you to enter information during each hour period. The layout of the site is built using a combination of bootstrap and CSS. Meanwhile, the functionality is built using Javascript and jQuery.
 
 ## Installation
 N/A
 
 ## Usage
-This quiz has a straightforward design with very few graphics other than the timer and quiz questions. When you open the website, you are shown the page below. There is a header that displays a link to highscores in the left corner and a timer in the right corner. Below that is a description of the quiz parameters and a button to start the quiz.
+This work day schedule has a simple design with aheader at the top that displays the title and date. 
 
-![picture of webpage with a header that displays a link to highscores and a timer. Below that is a description of the quiz and a button to start the quiz](assets/images/coding-quiz-header.png)
+![picture of full website. There is a title at the top with the date and time blocks from 9am-5pm with text boxes that allow you to enter information. ](assets/images/Work-day-scheduler.png)
 
-Once you click on the "Start Quiz" button, the timer will start and you will be shown the first question of the quiz. Simply click on the item that you believe is correct and the quiz will move to the next question. Once you click on an answer, a "Correct" or "Wrong" statement will be shown below the quiz questions. As stated in the previous section, wrong answers will be penalized by 15 seconds. The quiz will end either after you finish the 5 questions or if you run out of time before finishing the 5 questions. 
+Below the title is the actual work schedule calendar. It contains time blocks from 9am-5pm to account for the typical work day. Within each time block, there is a text box and a save button. If you enter information into the text box and hit the save button that corresponds to the text box, then that text will be saved into local storage. That means you can refresh the webpage and still see this saved information. In the below picture, "hello" has been entered into the 9am time block and is saved to local storage.
 
-![picture of the first question in the quiz with the question and 4 options listed in purple boxes](assets/images/coding-quiz-question.png)
+![picture of the title and time blocks down to 12pm. "hello" is entered into the 9am time block.](assets/images/work-day-saved.png)
 
-
-When the quiz is complete, you are shown the page pictured below. Your final score is equal to however much time was left on the timer when you completed the quiz. You then have the option to enter your initials and click submit to save your high score. 
-
-![screen says all done with your score listed and a box to enter your initials](assets/images/code-quiz-highscore.png)
-
-Once you enter your initials, you are taken to a page that displays highscores. Your highscore should be logged with your initials and the score next to them. If you want to re-take the quiz, you can click on the "Go back" button to refresh the page. If you would like to clear your highscores, then you can click on the "Clear Highscores" button. This page is pictured below. 
-
-![screen says highscores with your initials and score. There is a go back button and clear highscores button](assets/images/code-quiz-highscores.png)
-
-You will also notice that the website does have some functionality for mobile devices. At under 600px in width, the website is updated to adapt to smaller screens. 
+One final feature of this website is the color-coded time blocks. In this instance, a gray background means that this time-period is in the past; a red background means this time period is in the present; and a green background means the time-period is in the future. In the sbove picture, you will notice that 11am is in red. This is because the picture was taken at approximately 11:10am. Once the clock shifts to 12pm, then the 11am time block will become gray and the 12pm time block will turn red. All of the times after 12pm will still be green since they are still in the "future". 
 
 Below is a link to the active website:
 
-https://jacone626.github.io/code-quiz/
+
 
 ## Credits
-https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/
+https://stackoverflow.com/questions/15397372/javascript-new-date-ordinal-st-nd-rd-th
 
 
 ## License
