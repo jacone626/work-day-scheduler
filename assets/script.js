@@ -25,43 +25,37 @@ $('#hour-15text').val(localStorage.getItem('hour-15text'));
 $('#hour-16text').val(localStorage.getItem('hour-16text'));
 $('#hour-17text').val(localStorage.getItem('hour-17text'));
 
+//Used an each function and "this" to go through each "id" and compare it to the current time.
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
+var currentTime = dayjs().format("HH")
+var string = $(".time-block")
 
+console.log(string)
 
-  var currentTime = dayjs().format("HH")
-  var string = $(".time-block")
-
-  console.log(string)
-
-  string.each(function () {
+string.each(function () {
     var newString= $(this).attr("id").split("-")[1];
 
     console.log(newString)
 
-    // console.log(currentTime)
+    console.log(currentTime)
 
-    // if (newString == currentTime) {
-    //   $(this).addClass("present")
-    // }
+    if (newString == currentTime) {
+      $(this).addClass("present")
+    }
   
-    // else if (newString < currentTime) {
-    //   $(this).addClass("past")
-    // }
+    else if (newString < currentTime) {
+      $(this).addClass("past")
+    }
   
-    // else {
-    //   $(this).addClass("future")
-    // }
+    else {
+      $(this).addClass("future")
+    }
 
   });
 
-  // TODO: Add code to display the current date in the header of the page.
+// Shows current date on top of page
 
-var todayDate = dayjs().format("dddd, MMMM D")
+var todayDate = dayjs().format("dddd, MMMM Do")
 
 $("#currentDay").text(todayDate)
 
